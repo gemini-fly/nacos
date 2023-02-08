@@ -1,19 +1,18 @@
 package utils
 
 import (
-	"encoding/json"
-	"nacos/tools"
+	"log"
 
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )
 
-func InitNacos(NamespaceId string, DataId string, Group string) *tools.Config {
+func InitNacos(NamespaceId, DataId, Group string) string {
 	sc := []constant.ServerConfig{
 		{
 			IpAddr: "nacos.gemini.com",
-			Port:   8848,
+			Port:   58848,
 		},
 	}
 	cc := constant.ClientConfig{
@@ -26,19 +25,16 @@ func InitNacos(NamespaceId string, DataId string, Group string) *tools.Config {
 		"clientConfig":  cc,
 	})
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
 	content, err := configClient.GetConfig(vo.ConfigParam{
 		DataId: DataId,
 		Group:  Group,
 	})
 	if err != nil {
-		panic(err)
+		log.Fatal(err)
 	}
-	Config := &tools.Config{}
-	err = json.Unmarshal([]byte(content), &Config)
-	if err != nil {
-		panic(err)
-	}
-	return Config
+	return content
+
 }
+
