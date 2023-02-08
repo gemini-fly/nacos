@@ -4,8 +4,6 @@
 
 
 var (
-
-
 	NamespaceId = "dcc3ab24-6834-4cd1-bd57-2c24d61ffe5f"
 	DataId      = "ak"
 	Group       = "ops"  
@@ -16,12 +14,8 @@ var (
 
 
 type AKConfig struct {
-
-
 	AKID string `mapstructure:"akid" json:"akid"`
 	AKSK string `mapstructure:"aksk" json:"aksk"`
-	
-	
 }
 
 
@@ -29,7 +23,7 @@ type AKConfig struct {
 var ak AKConfig  
 
 
-
+### 反序列化结构体
 func AK() {  
 	app := utils.InitNacos(NamespaceId, DataId, Group)  
 	json.Unmarshal([]byte(app), &ak)  
