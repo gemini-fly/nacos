@@ -4,8 +4,8 @@
 
 
 var (  
-	NamespaceId = "dcc3ab24-6834-4cd1-bd57-2c24d61ffe5f"
-	DataId      = "ak"
+	NamespaceId = "dcc3ab24-6834-4cd1-bd57-2c24d61ffe5f"  
+	DataId      = "ak"  
 	Group       = "ops"  
 )  
 ### 创建结构体来反序列化其中的配置文件，nacos中的配置文件为json格式
