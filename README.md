@@ -8,10 +8,7 @@ var (
 
 	NamespaceId = "dcc3ab24-6834-4cd1-bd57-2c24d61ffe5f"
 	
-	
 	DataId      = "ak"
-	
-	
 	Group       = "ops"  
 )
 
@@ -23,8 +20,6 @@ type AKConfig struct {
 
 
 	AKID string `mapstructure:"akid" json:"akid"`
-	
-	
 	AKSK string `mapstructure:"aksk" json:"aksk"`
 	
 	
