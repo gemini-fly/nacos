@@ -1,14 +1,16 @@
 package utils
 
 import (
+	"io"
 	"log"
+	"strings"
 
 	"github.com/nacos-group/nacos-sdk-go/clients"
 	"github.com/nacos-group/nacos-sdk-go/common/constant"
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )
 
-func InitNacos(NamespaceId, DataId, Group string) string {
+func InitNacos(NamespaceId, DataId, Group string) io.Reader {
 	sc := []constant.ServerConfig{
 		{
 			IpAddr: "nacos.gemini.com",
@@ -34,7 +36,5 @@ func InitNacos(NamespaceId, DataId, Group string) string {
 	if err != nil {
 		log.Fatal(err)
 	}
-	return content
-
+	return strings.NewReader(string(content))
 }
-
