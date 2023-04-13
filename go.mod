@@ -1,11 +1,8 @@
-module nacos1
+module nacos
 
 go 1.17
 
-require (
-	github.com/gemini-fly/nacos v1.0.0
-	github.com/nacos-group/nacos-sdk-go v1.1.4
-)
+require github.com/nacos-group/nacos-sdk-go v1.1.4
 
 require (
 	github.com/aliyun/alibaba-cloud-sdk-go v1.61.18 // indirect
