@@ -10,11 +10,11 @@ import (
 	"github.com/nacos-group/nacos-sdk-go/vo"
 )
 
-func InitNacos(NamespaceId, DataId, Group string) io.Reader {
+func InitNacos(NacosHost, NamespaceId, DataId, Group string, NacosPort uint64) io.Reader {
 	sc := []constant.ServerConfig{
 		{
-			IpAddr: "nacos.gemini.com",
-			Port:   58848,
+			IpAddr: NacosHost,
+			Port:   NacosPort,
 		},
 	}
 	cc := constant.ClientConfig{

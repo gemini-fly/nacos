@@ -3,11 +3,13 @@ package dao
 import (
 	"encoding/json"
 	"log"
-	"nacos/utils"
+
+	"github.com/gemini-fly/nacos/utils"
 )
 
 func Config(s string) {
-	app := utils.InitNacos(NamespaceId, DataId, Group)
+	app := utils.InitNacos
+
 	if err := json.NewDecoder(app).Decode(&s); err != nil {
 		log.Fatalln(err)
 	}

@@ -1,4 +1,4 @@
-module nacos
+module github.com/gemini-fly/nacos
 
 go 1.17
 
